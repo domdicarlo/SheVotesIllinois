@@ -1,0 +1,65 @@
+By downloading and/or installing this software, you agree to be bound by the terms of this Agreement.
+
+1. Allowed Uses
+
+This license allows for the use of the font on a trial basis. The font may not be used in production work without the applicable license.
+
+You may not use the font for commercial purposes.
+
+You may not use the font to create EPS or other scalable drawings.
+
+2. Number of Users
+There is no limit to the number of users provided all users are within the same geographical location. Every computer in which the font is installed constitutes one user.
+
+3. Third Parties
+
+You may not provide the font to a graphic designer, printer or other service working on your behalf.
+
+You may not make the font accessable to any other third parties or distribute the font by any means not outlined in Section Four.
+
+4. Embedding and Linking
+
+4a. You may embed the font into any electronic document (such as a PDF), provided that document is not editable by the recipient.
+
+4b. Web Embedding
+
+4b.I. Flash
+You may not embed the font into Flash provided you use the highest level of protection in regards to the embedded fonts.
+
+4b.II. @font-face CSS
+You may not embed the font using the @font-face CSS selection. A license addendum allowing @font-face usage is required.
+
+4b.III. Other Web Embedding
+You may not convert the font through the use of any other technology.
+
+4c Application Embedding
+You may embed the licensed fonts into a computer application or game for an additional licensing fee.
+
+5. Modifications
+
+You may not import and alter the outlines of the trial font in a drawing program (such as Adobe Illustrator).
+You may not alter, adapt, modify, translate, or create derivative works based on the licensed font itself without JTD's prior written consent.
+
+6. Copyright
+
+You agree that the font and accompanying materials are the exclusive property of JTD. Unauthorized copying of the Product even if modified, merged, or included with other software, or of the written materials, is expressly forbidden. You may be held legally responsible for any infringement of the foundryís intellectual property rights that is caused or encouraged by your failure to abide by the terms of this Agreement.
+
+7. Termination
+
+You agree that The Agreement shall automatically terminate, without notice from JTTD, if you fail to comply with any provision contained herein. 
+
+8. Disclaimer and Limited Warranty
+
+JTD  warrants the Product to be free from defects in materials and workmanship under normal use for a period of twenty one (21) days from the date of delivery as shown on your receipt. JTD's entire liability and your exclusive remedy as to a defective product shall be, at JTD's option, either return of purchase price or replacement of any such product that is returned to JTD with a copy of the invoice. JTD shall have no responsibility to replace the product or refund the purchase price if failure results from accident, abuse or misapplication, or if any product is lost or damaged due to theft, fire, or negligence. Any replacement product will be warranted for twenty one (21) days. This warranty gives you specific legal rights. You may have other rights, which vary from state to state.
+
+EXCEPT AS EXPRESSLY PROVIDED ABOVE, THE PRODUCT, IS PROVIDED ìAS ISî. JTD MAKES NO WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+
+The entire risk as to the quality and performance of the Product rests upon you. Neither JTD nor the distributor warrants that the functions contained in the Product will meet your requirements or that the operation of the software will be uninterrupted or error free.
+
+JTD SHALL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, CONSEQUENTIAL, OR INCIDENTAL DAMAGES (INCLUDING DAMAGES FROM LOSS OF BUSINESS PROFITS, BUSINESS INTERRUPTION, LOSS OF BUSINESS INFORMATION, AND THE LIKE) ARISING OUT OF THE USE OF OR INABILITY TO USE THE PRODUCT EVEN IF JTD OR THE FOUNDRY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+Because some states do not allow the exclusion or limitation of liability for consequential or incidental damages, the above limitation may not apply to you.
+
+11. Governing Law
+
+This agreement shall be interpreted under the laws of the State of New York. Any litigation under this agreement shall be resolved in the trial courts of the State of New York.
