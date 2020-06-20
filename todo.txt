@@ -1,0 +1,48 @@
+********* Questions for the team **********
+
+
+* Is there a difference between "Volunteer With Us" and "Partner With Us"?
+
+* Is the Partner With Us Collage-thing something you want on every page?
+
+* What font is used in the partner-with-us collage?
+
+
+********* Things to do **********
+
+
+Homepage: 
+
+* Modify partner with us button. Ask them about this, and whether or not we want a gradient over the collage. Also see if we want this on every page. Perhaps we want more stuff on that collage? Also, "Partner With Us" or "Volunteer"?
+
+
+Who-We-Are:
+
+* Pad the donate section better. Clean it up.
+
+* Clean up the who we are spacing
+
+* Implement the photo gallery of SVI members/council/volunteer
+
+* Implement some javascript so we can pop up the bios for SVI team members
+
+
+Your-Vote-Matters: 
+
+* Space out the collapsible sections from each other better
+
+* Add in an animation to the expand/collapse
+
+* Implement the photo gallery of politicians (should be similar to Who-We-Are section) 
+
+
+General:
+
+* Reduce redundant code by using the javascript-injected-html code hack.
+
+* Clean up space, add to github everything important
+
+* Reformat the code, get a linter going
+
+* Get Adela to give you general updates on the backend
+
