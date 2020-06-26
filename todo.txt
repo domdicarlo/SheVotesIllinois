@@ -1,9 +1,14 @@
 ********* Questions for the team **********
 
+In general, what do you think about the direction of style? Note some things aren't quite styled yet.
+
+
 
 * Is there a difference between "Volunteer With Us" and "Partner With Us"?
 
 * Is the Partner With Us Collage-thing something you want on every page?
+
+* Do you want some sort of overlayed gradient on top of the partner with us collage?
 
 * What font is used in the partner-with-us collage?
 
@@ -45,4 +50,18 @@ General:
 * Reformat the code, get a linter going
 
 * Get Adela to give you general updates on the backend
+
+
+
+
+Meeting:
+
+Make logo cirlce bigger
+
+Colors 
+
+Accessibility: Vision, Reading
+
+
+
 

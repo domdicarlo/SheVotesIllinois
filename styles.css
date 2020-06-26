@@ -106,6 +106,14 @@ nav{
     left: 1.5rem;
 }
 
+nav {
+    border-bottom: white;
+}
+
+#nav {
+    /* border-bottom: white solid 8px; */
+}
+
 .nav-item{
     margin: 1.5rem 0;
 }
@@ -120,6 +128,14 @@ nav{
   min-width: 8rem;
 }
 
+.marquee {
+    width: 100%;
+    height: auto;
+    border-top:  white solid 1px;
+    border-bottom:  white solid 1px;
+    outline: #f04e52 solid 7px;
+}
+
 /* hero */
 .hero {
     /* font-family: 'Bebas Neue'; */
@@ -127,7 +143,7 @@ nav{
     width: 100%;
     height: 35rem;
     /* background: linear-gradient(135deg, rgba(72,56,149,0.8) 0%, rgba(38, 204, 216, 0.64) 100%), url("images/header-bg.jpg") center no-repeat; */
-    background: linear-gradient(135deg,  rgba(73, 179, 198, 0.64) 0%, rgba(39, 134, 196, 0.66) 50%, rgba(72,56,149,0.66)  100%), url("images/header-bg.jpg") center no-repeat;
+    background: linear-gradient(135deg,  rgba(73, 179, 198, 0.64) 0%, rgba(39, 134, 196, 0.66) 50%, rgba(72,56,149,0.66)  100%);
     /* background: url("images/header-bg.jpg") center no-repeat; */
     background-size: cover;
     position: relative;
@@ -354,6 +370,10 @@ nav{
     margin-right: 1rem;
 }
 
+.social-icon:hover {
+    opacity: 0.5;
+}
+
 /*social-medias*/
 .social-media{
     width: 100%;
@@ -454,9 +474,9 @@ nav{
 }
 
 footer {
+    font-family: "Montserrat-Bold", sans-serif;
     background-color: #f04e52;
     color: white;
-    font-weight: bold;
     text-align: center;
     padding: 0.7rem 0;
 }
@@ -476,21 +496,31 @@ footer a:hover {
 
 /* Fonts */
 @font-face {
+    font-family: "Gastromond Trial";
+    src: url("fonts/gastromond/Gastromond.otf") format("otf");
+    src: url("fonts/gastromond/Gastromond.ttf") format("ttf");
+    src: url("fonts/gastromond/Gastromond.ttf") format("woff");
+}
+
+@font-face {
   font-family: "Bebas Neue";
-  src: url("fonts/bebas_font/bebasneue-regular-webfont.woff") format("woff");
-  src: url("fonts/bebas_font/bebasneue-regular-webfont.woff2") format("woff2");
+  src: url("fonts/bebas_neue/bebasneue-regular-webfont.woff") format("woff");
+  src: url("fonts/bebas_neue/bebasneue-regular-webfont.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Montserrat-Bold";
+    src: url("fonts/Montserrat-Bold/Montserrat-Bold.eot") format("eot");
+    src: url("fonts/Montserrat-Bold/Montserrat-Bold.svg") format("svg");
+    src: url("fonts/Montserrat-Bold/Montserrat-Bold.ttf") format("ttf");
+    src: url("fonts/Montserrat-Bold/Montserrat-Bold.woff") format("woff");
+    src: url("fonts/Montserrat-Bold/Montserrat-Bold.woff2") format("woff2");
 }
 
 /* @font-face {
     font-family: "Gastromond Tria";
     /* src: url("fonts/JTD_Gastromond_Italic_Trial/Gastromond-Trial-Italic.otf") format("otf"); */
 /* } */ 
-
-@font-face {
-    font-family: "Gastromond Trial";
-    /* src: url("fonts/JTD_Gastromond_Regular_Trial/Gastromond-Trial.otf") format("otf"); */
-    src: url("fonts/JTD_Gastromond_Italic_Trial/Gastromond-Trial-Italic.otf") format("otf");
-}
 
 /*Media queries*/
 @media screen and (min-width: 350px){
@@ -640,6 +670,26 @@ footer a:hover {
     height: 100%;
     background-image: linear-gradient(135deg, rgba(39, 134, 196, 0.8) 0%, rgba(73, 179, 198, 0.64) 100%);
     z-index: -1;
+}
+
+.people-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+    grid-gap: 2.5rem;
+}
+
+.people-grid-item{
+    height: 6rem;
+    width: 6rem;
+    padding: 5rem;
+    color: #fafafa;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1;
+    background-color: red;
 }
 
 
