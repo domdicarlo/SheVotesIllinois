@@ -678,24 +678,30 @@ footer a:hover {
     z-index: -1;
 }
 
-.people-grid{
+.people-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
-    grid-gap: 2.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(2rem, 1fr));
+    grid-gap: 1rem;
+    margin: auto;
+    text-align: center;
+    justify-content: center;
 }
 
-.people-grid-item{
-    height: 6rem;
-    width: 6rem;
-    padding: 5rem;
-    color: #fafafa;
+.people-grid-item {
+    margin: auto;
+    height: 8rem;
+    width: 8rem;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     cursor: pointer;
     z-index: 1;
-    background-color: red;
+}
+
+.people-grid-item p {
+    margin-top: 0.5rem;
+    font-size: 1rem;
 }
 
 
