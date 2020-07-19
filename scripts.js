@@ -1,3 +1,8 @@
+// for working with cockpit api
+fetch('./cockpit-master/api/collections/listCollections?token=account-73c12d7cf568f00632fe287f98eed8')
+    .then(collections => collections.json())
+    .then(collections => console.log(collections));
+
 // For the modal:
 // Get the modal
 var modal = document.getElementById("myModal");
@@ -28,6 +33,10 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+var title = document.createElement("h2")
+modal.appendChild()
+
 // End of For the modal
 
 
