@@ -308,7 +308,6 @@ nav {
 .news-events h1{
     font-family: 'Bebas Neue', sans-serif;
     font-size: 2rem;
-    margin-bottom: 2.5rem;
     margin-top: 1.5rem;
 
 }
@@ -716,7 +715,8 @@ footer a:hover {
 .people-grid-item {
     line-height: 1.5rem;
     margin: auto;
-    margin-bottom: 8rem;
+    margin-bottom: 5rem;
+    margin-top: 4rem;
     height: 9rem;
     width: 9rem;
     position: relative;
@@ -726,6 +726,8 @@ footer a:hover {
     display: inline-block;
     margin-left: 1rem;
     margin-right: 1rem;
+    vertical-align: top;
+
 }
 
 .people-grid-item p {
