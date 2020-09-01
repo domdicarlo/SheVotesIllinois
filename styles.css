@@ -17,8 +17,13 @@ a{
     text-decoration: none;
 }
 
-ul{
-    list-style: none;
+.nav-list ul{
+    /* list-style: none; */
+    /* I had to add the above to navigation.html. Go there to change it */
+}
+
+.policy ul{
+    list-style-type: circle;
 }
 
 p{
@@ -228,6 +233,13 @@ nav {
     grid-area: subtitle;
 }
 
+#info-btn {
+    font-size: 1.5rem;
+    font-family: "Nunito Bold", sans-serif;
+    /* margin-left: rem; */
+    /* height: 3rem; */
+}
+
 #donate-btn {
     grid-area: donate;
     /* margin-left: rem; */
@@ -238,7 +250,16 @@ nav {
     margin: 2rem 2rem;
 }
 
+#info-btn.btn-wrapper {
+    /* margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-left: 0rem;
+    margin-right: 0rem; */
+    /* margin: 0 0; */
+}
+
 .btn {
+    cursor: pointer;    
     font-family: 'Bebas Neue', sans-serif;
     background-color: #f04e52;
     border-radius: 2rem;
@@ -261,6 +282,10 @@ nav {
     background-color: #ce587b;
 }
 
+#partner-btn:hover{
+    opacity: 0.5;
+}
+
 .main-message btn {
     flex: 1;
 }
@@ -271,11 +296,51 @@ nav {
     margin-bottom: 1rem;
 }
 
+.experience-outdoors h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.experience-outdoors p {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.experience-outdoors ul {
+    font-size: 20px;
+    padding-left:5rem;
+    padding-right:5rem;
+    /* padding-top: 2rem;
+    padding-bottom: 2rem; */
+}
+
+.experience-outdoors li {
+    font-size: 20px;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.experience-outdoors a:link {
+    color: #49b3c6;
+    text-decoration: underline;
+    font-weight: bold;
+}
+.experience-outdoors a:visited {
+    color: #49b3c6;
+    text-decoration: underline;
+    font-weight: bold;
+}
+.experience-outdoors a:hover {
+    color: #49b3c6;
+    opacity: 0.5;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
 .title-heading{
     text-align: left;
     text-transform: uppercase;
     margin-bottom: 5rem;
-    color: rgba(0,0,0,.7);
 }
 
 .title-heading h3{
@@ -285,8 +350,9 @@ nav {
 
 .title-heading h1{
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 2rem;
+    font-size: 3rem;
     margin: .5rem 0 1rem;
+    margin-bottom: 1rem;
 }
 
 .title-heading p{
@@ -319,21 +385,22 @@ nav {
 }
 
 .news-grid{
-    display: grid;
+    /* display: grid;
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-    grid-gap: 2.5rem;
+    grid-gap: 2.5rem; */
+    justify-content: center;
+    margin:auto;
 }
 
 .news-grid-item{
-    height: 30rem;
+    height: 25rem;
+    width: 25rem;
     padding: 5rem;
     color: #fafafa;
-    position: relative;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     cursor: pointer;
     z-index: 1;
+    margin:auto;
 }
 
 .news-grid-item::before{
@@ -479,16 +546,31 @@ nav {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(135deg, rgba(39, 134, 196, 0.8) 0%, rgba(73, 179, 198, 0.64) 100%);
+    /* background-image: linear-gradient(135deg, rgba(39, 134, 196, 0.8) 0%, rgba(73, 179, 198, 0.64) 100%); */
     z-index: -1;
 }
 
 /* Centered text */
 .centered {
-  position: absolute;
+  /* position: absolute;
   top: 70%;
   left: 85%;
-  transform: translate(-50%, -75%);
+  transform: translate(-50%, -75%); */
+  position: relative;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 35%;
+  font-size: 2rem;
+}
+
+.centered-two {
+  position: relative;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 15%;
+  font-size: 2rem;
 }
 
 footer {
@@ -497,6 +579,12 @@ footer {
     color: white;
     text-align: center;
     padding: 0.7rem 0;
+    width: 100%;
+}
+
+#special-footer {
+    position: absolute;
+    bottom: 0;
 }
 
 footer p {
@@ -553,12 +641,6 @@ footer a:hover {
     /* src: url("fonts/JTD_Gastromond_Italic_Trial/Gastromond-Trial-Italic.otf") format("otf"); */
 /* } */ 
 
-/*Media queries*/
-@media screen and (min-width: 350px){
-    .main-message{
-        transform: translateY(40%);
-    }
-}
 
 /* @media screen and (min-width: 470px){
     .hero::before{
@@ -574,8 +656,514 @@ footer a:hover {
     }
 } */
 
+
+
+#partner-banner-mobile {
+    display: none;
+}
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "main-content donation-area"; 
+      /* grid-template-columns: 2fr;
+      grid-template-rows: 1fr ;
+      grid-template-areas: "main-content"
+                            "donation-area";  */
+  /* Will need to adjust to below on a media query */
+  /* grid-template-columns: 1fr;
+  grid-template-rows: 1fr; 
+  grid-template-areas: "main-content" "donation-area"; */
+  gap: 1px;
+}
+
+.main-content { grid-area: main-content; }
+
+.main-container {
+
+}
+
+.donation-area { 
+  grid-area: donation-area; 
+  text-align: center;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  max-height: 20rem;
+}
+
+.donation-area-text p{
+  text-align: left;
+  padding: 1.5rem 1.5rem;
+  font-size: 1.3rem;
+}
+
+.donation-area-text {
+  border: solid;
+  border-color: #f04e52;
+  padding: 1.5rem 1.5rem;
+}
+
+
+.news-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-gap: 1.5rem;
+    margin: auto;
+    text-align: center;
+    width: 90%;
+}
+
+.news-grid-item{
+    height: 20rem;
+    color: #fafafa;
+    position: relative;
+    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    vertical-align: center;
+    cursor: pointer;
+    z-index: 1;
+    /* margin: 1rem 1rem; */
+}
+
+.news-grid-item::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(135deg, rgba(39, 134, 196, 0.8) 0%, rgba(73, 179, 198, 0.64) 100%);
+    z-index: -1;
+}
+
+.people-grid {
+    /* display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr)); */
+    /* grid-gap: 1rem 1rem; */
+    margin: auto;
+    text-align: center;
+    line-height: 2rem;
+}
+
+.people-grid-item {
+    line-height: 1.5rem;
+    margin: auto;
+    margin-bottom: 5rem;
+    margin-top: 4rem;
+    height: 9rem;
+    width: 9rem;
+    position: relative;
+    /* display: flex;
+    flex-direction: column; */
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    vertical-align: top;
+
+}
+
+.people-grid-item p {
+    font-size: 1rem;
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+}
+
+.people-grid-name {
+    font-family: "Nunito-Bold"
+}
+
+.people-grid-name p {
+    font-family: "Nunito-Bold";
+}
+
+
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.collapsible h1 {
+    font-size: 2rem;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.collapsible-active, .collapsible:hover {
+  background-color: #ccc;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.collapsible-content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+
+}
+
+.collapsible-content h1 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.collapsible-content ol {
+    font-size: 20px;
+    padding-left:5rem;
+    padding-right:5rem;
+    /* padding-top: 2rem;
+    padding-bottom: 2rem; */
+}
+.collapsible-content ul {
+    font-size: 20px;
+    padding-left:5rem;
+    padding-right:5rem;
+    /* padding-top: 2rem;
+    padding-bottom: 2rem; */
+}
+.collapsible-content li {
+    font-size: 20px;
+    /* padding-top: 0.5rem;
+    padding-bottom: 0.5rem; */
+}
+.collapsible-content h2 {
+    padding: 1.5rem;
+}
+.collapsible-content p {
+    padding: 1.5rem;
+}
+#sublist ul {
+    font-size: 20px;
+    padding-left:2rem;
+    padding-right:2rem;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.collapse-button {
+    display: inline;
+
+}
+
+.collapse-button h1 {
+    display: inline;
+}
+
+.collapsible-content a:link {
+    color: #49b3c6;
+    text-decoration: underline;
+    font-weight: bold;
+}
+.collapsible-content a:visited {
+    color: #49b3c6;
+    text-decoration: underline;
+    font-weight: bold;
+}
+.collapsible-content a:hover {
+    color: #49b3c6;
+    opacity: 0.5;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+#canvass {
+    width: 50rem;
+    height: auto;
+    text-align: center;
+    margin: auto;
+    display: block;
+}
+
+
+/* Modal Stuff */
+
+/* The Modal (background) */
+.modal-container {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+}
+
+.modal {
+  position: fixed; /* Stay in place */
+  z-index: 2; /* Sit on top */
+  left: 50%;
+  top: 50%;
+  width: 50%; 
+  height: 75%; 
+  margin-left: -25%;
+  margin-top: -18.75% ;
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,1); /* Black w/ opacity */
+  /* border: 5px solid black; */
+}
+
+
+.modal a:link {
+    color: #49b3c6;
+    text-decoration: underline;
+    font-weight: bold;
+}
+.modal a:visited {
+    color: #49b3c6;
+    text-decoration: underline;
+    font-weight: bold;
+}
+.modal a:hover {
+    color: #49b3c6;
+    opacity: 0.5;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.modal img {
+    /* height: 20rem; */
+    height: 20rem;
+    width: auto;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto; 
+  padding: 80px;
+  width: 100%; /* Could be more or less, depending on screen size */
+}
+
+.modal-content p {
+  text-align: left;
+  margin-left: 4rem;
+  margin-right: 4rem;
+}
+
+.modal span {
+    font-family: "Nunito-Bold";
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* links */
+.policy a:link {
+    color: #49b3c6;
+    text-decoration: underline;
+    font-weight: bold;
+}
+.policy a:visited {
+    color: #49b3c6;
+    text-decoration: underline;
+    font-weight: bold;
+}
+.policy a:hover {
+    color: #49b3c6;
+    opacity: 0.5;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/* positioning myCanvas */
+#myCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#partner-banner:hover {
+    opacity: 0.5;
+}
+
+
+/* For the calendar */
+#calendar {
+    /* width: 50%;
+    height: 50%;
+    margin: auto; */
+}
+
+.fc-event-main {
+    cursor: pointer;
+}
+
+/* #take-action-dropdown {
+    display: none;
+} */
+
+/* Dropdown Button */
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.take-action-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.take-action-dropdown-content {
+  font-family: "Nunito-Bold", sans-serif;
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.take-action-dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.take-action-dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.take-action-dropdown:hover .take-action-dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.take-action-dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+
+/* Handle the let's connect form */
+.form-group {
+    font-size: 1.5rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.form-group input {
+    font-size: 1.5rem;
+}
+
+.form-group input[type=submit] {
+    height: 5rem;
+    width: 5rem;
+}
+
+.form-group textarea {
+    font-size: 1.5rem;
+}
+
+button {
+    outline: none;
+    border: none;
+    cursor: pointer;    
+}
+
+.carousel {
+    color: white;
+    margin: auto;
+    width: 50rem;
+    border: #f04e52 solid 7px;
+    background: linear-gradient(135deg,  rgba(73, 179, 198, 0.64) 0%, rgba(39, 134, 196, 0.86) 100%  100%);
+}
+
+.carousel-item {
+    padding: 2rem;
+}
+
+.testimonials {
+
+}
+
+.event-img {
+    width: 40%;
+    display: inline-block;
+    vertical-align: middle;
+}
+.event-desc {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    padding-left: 4rem;
+    width: 40%;
+}
+
+.event-info {
+    font-size: 14px;
+}
+
+.event-container {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    text-align: center;
+}
+
+.event-desc h2{
+    text-align: center;
+    margin: auto;
+}
+
+.accomplishments {
+    font-size: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.caption {
+    text-align: center;
+    margin: auto;
+    padding-top:1rem;
+    padding-bottom:1rem;
+    font-size: 1.2rem;
+}
+
+@media screen and (max-width: 500px) {
+}
+
+/* @media screen and (min-width: 1200px){
+    .hero{
+        height: 75vh;
+    }
+}  */
+
+/*Media queries*/
+@media screen and (min-width: 350px){
+    .main-message{
+        transform: translateY(40%);
+    }
+}
+
 /* Fix for navbar */
-@media screen and (min-width: 1280px){
+/* @media screen and (min-width: 1280px){
     header{
         height: 8rem;
     }
@@ -631,214 +1219,159 @@ footer a:hover {
     .nav-link:hover::before{
         transform: scaleX(1);
     }
-} 
+}   */
 
-@media screen and (min-width: 950px){
-    /* .hero {
-        height: 22.7rem;
-        background: url("images/wave-large.png");
-        background-size: cover;
-    } */
 
-}
+@media screen and (max-width: 1060px) {
+    .grid-container {
+        display: block;
+      /* display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+      grid-template-areas: "main-content"
+                            "donation-area";  */
 
-/* @media screen and (min-width: 1200px){
-    .hero{
-        height: 75vh;
+      /* Will need to adjust to below on a media query */
+      /* grid-template-columns: 1fr;
+      grid-template-rows: 1fr; 
+      grid-template-areas: "main-content" "donation-area"; */
+      gap: 1px;
     }
-}  */
-
-.grid-container {
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-  grid-template-rows: 1fr;
-  gap: 1px;
-  grid-template-areas: "main-content donation-area";
+    .carousel {
+        width: 50%;
+    }
 }
 
-.main-content { grid-area: main-content; }
+@media screen and (max-width: 630px) {
 
-.donation-area { 
-  grid-area: donation-area; 
-  text-align: center;
-  margin-left: 2rem;
-  max-height: 20rem;
+    .event-desc h2 {
+        font-size: 1rem;
+    }
+    .event-desc {
+        font-size: 0.8rem;
+    }
+    .event-info {
+        font-size: 0.7rem;
+    }
+    .btn#info-btn {
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+    }
+
+   #partner-banner {
+     display: none;
+   }
+
+   #partner-banner-mobile {
+     display: block;
+   }
+
+    .carousel {
+        width: 70%;
+    }
+
 }
 
-.donation-area-text {
-  border: solid;
-  border-color: #f04e52;
-  text-align: left;
-  padding: 2rem 2rem;
-  font-size: 0.5rem;
+@media screen and (max-width: 550px) {
+
+    .event-desc h2 {
+        font-size: 1rem;
+    }
+    .event-desc {
+        font-size: 0.8rem;
+    }
+    .event-info {
+        font-size: 0.7rem;
+    }
+    .btn#info-btn {
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+    }
+
+   #partner-banner {
+     display: none;
+   }
+
+   #partner-banner-mobile {
+     display: block;
+     margin-bottom: 2rem;
+   }
+
+    .carousel {
+        width: 70%;
+    }
+    .marquee img {
+        height: 0rem;
+        /* border-top:  white solid 1px;
+        border-bottom:  white solid 1px; */
+        /* margin-bottom: 1rem; */
+        /* position: relative; */
+    }
+
 }
 
-
-.news-grid{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-    grid-gap: 2.5rem;
+@media screen and (max-width: 470px) {
+    .event-desc h2 {
+        font-size: 0.8rem;
+    }
+    .event-desc {
+        font-size: 0.6rem;
+    }
+    .event-info {
+        font-size: 0.5rem;
+    }
+    .container {
+        width: 90%;
+        max-width: 90rem;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+    }
+    .btn#info-btn {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+    }
+    .carousel {
+        width: 90%;
+    }
 }
 
+@media screen and (max-width: 370px) {
+    .event-desc h2 {
+        font-size: 0.8rem;
+    }
+    .event-desc {
+        font-size: 0.6rem;
+    }
+    .event-info {
+        font-size: 0.5rem;
+    }
+    .container {
+        width: 90%;
+        max-width: 90rem;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+    }
+    .btn#info-btn {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+    }
+    .carousel {
+        width: 90%;
+    }
+
+    
 .news-grid-item{
-    height: 30rem;
-    padding: 5rem;
+    height: 15rem;
+    width: 15rem;
     color: #fafafa;
-    position: relative;
-    display: flex;
-    flex-direction: column;
+    padding-left: 3rem;
     justify-content: center;
     cursor: pointer;
     z-index: 1;
+    margin:auto;
 }
-
-.news-grid-item::before{
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(135deg, rgba(39, 134, 196, 0.8) 0%, rgba(73, 179, 198, 0.64) 100%);
-    z-index: -1;
-}
-
-.people-grid {
-    /* display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr)); */
-    /* grid-gap: 1rem 1rem; */
-    margin: auto;
-    text-align: center;
-    line-height: 2rem;
-}
-
-.people-grid-item {
-    line-height: 1.5rem;
-    margin: auto;
-    margin-bottom: 5rem;
-    margin-top: 4rem;
-    height: 9rem;
-    width: 9rem;
-    position: relative;
-    /* display: flex;
-    flex-direction: column; */
-    cursor: pointer;
-    display: inline-block;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    vertical-align: top;
-
-}
-
-.people-grid-item p {
+.news-grid-item h2{
     font-size: 1rem;
 }
 
-.people-grid-name {
-    font-family: "Nunito-Bold"
-}
-
-
-/* Style the button that is used to open and close the collapsible content */
-.collapsible {
-  background-color: #eee;
-  color: #444;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-}
-
-/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-.collapsible-active, .collapsible:hover {
-  background-color: #ccc;
-}
-
-/* Style the collapsible content. Note: hidden by default */
-.collapsible-content {
-  padding: 0 18px;
-  display: none;
-  overflow: hidden;
-  background-color: #f1f1f1;
-
-}
-
-.collapse-button {
-    display: inline;
-
-}
-
-.collapse-button h1 {
-    display: inline;
-}
-
-
-/* Modal Stuff */
-
-/* The Modal (background) */
-.modal-container {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; 
-  height: 100%; 
-  background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
-}
-
-.modal {
-  position: fixed; /* Stay in place */
-  z-index: 2; /* Sit on top */
-  left: 50%;
-  top: 50%;
-  width: 50%; 
-  height: 75%; 
-  margin-left: -25%;
-  margin-top: -18.75% ;
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,1); /* Black w/ opacity */
-  /* border: 5px solid black; */
-}
-
-.modal img {
-    height: 20rem;
-    width: 20rem;
-}
-
-/* Modal Content/Box */
-.modal-content {
-  background-color: #fefefe;
-  margin: auto; 
-  padding: 80px;
-  width: 100%; /* Could be more or less, depending on screen size */
-}
-
-.modal-content p {
-  text-align: left;
-  margin-left: 4rem;
-  margin-right: 4rem;
-}
-
-.modal span {
-    font-family: "Nunito-Bold";
-}
-
-/* The Close Button */
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
 }
