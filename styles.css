@@ -247,7 +247,12 @@ nav {
 }
 
 .btn-wrapper {
-    margin: 2rem 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.btn-wrapper#info-btn {
+    margin-top: 3rem;
 }
 
 #info-btn.btn-wrapper {
@@ -395,7 +400,7 @@ nav {
 .news-grid-item{
     height: 25rem;
     width: 25rem;
-    padding: 5rem;
+    padding: 3rem;
     color: #fafafa;
     justify-content: center;
     cursor: pointer;
@@ -450,7 +455,7 @@ nav {
 }
 
 .social-icon {
-    width: 100px;
+    width: 8rem;
     margin-left: 1rem;
     margin-right: 1rem;
 }
@@ -814,7 +819,7 @@ footer a:hover {
 
 .collapsible-content h1 {
     text-align: center;
-    font-size: 2rem;
+    font-size: 2.0rem;
 }
 
 .collapsible-content ol {
@@ -900,18 +905,30 @@ footer a:hover {
 }
 
 .modal {
+    /*
   position: fixed; /* Stay in place */
   z-index: 2; /* Sit on top */
   left: 50%;
   top: 50%;
   width: 50%; 
   height: 75%; 
-  margin-left: -25%;
-  margin-top: -18.75% ;
+  /* margin-left: -25%;
+  margin-top: -18.75% ; */
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,1); /* Black w/ opacity */
   /* border: 5px solid black; */
+ /* */
+
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
 
@@ -943,7 +960,7 @@ footer a:hover {
   background-color: #fefefe;
   margin: auto; 
   padding: 80px;
-  width: 100%; /* Could be more or less, depending on screen size */
+  width: 50%; /* Could be more or less, depending on screen size */
 }
 
 .modal-content p {
@@ -1113,7 +1130,7 @@ button {
     display: inline-block;
     text-align: center;
     vertical-align: middle;
-    padding-left: 4rem;
+    padding-left: 2rem;
     width: 40%;
 }
 
@@ -1146,8 +1163,8 @@ button {
     font-size: 1.2rem;
 }
 
-@media screen and (max-width: 500px) {
-}
+/* @media screen and (max-width: 500px) {
+} */
 
 /* @media screen and (min-width: 1200px){
     .hero{
@@ -1156,14 +1173,14 @@ button {
 }  */
 
 /*Media queries*/
-@media screen and (min-width: 350px){
+/* @media screen and (min-width: 350px){
     .main-message{
         transform: translateY(40%);
     }
-}
+} */
 
 /* Fix for navbar */
-/* @media screen and (min-width: 1280px){
+@media screen and (min-width: 1280px) {
     header{
         height: 8rem;
     }
@@ -1219,27 +1236,96 @@ button {
     .nav-link:hover::before{
         transform: scaleX(1);
     }
-}   */
+}  
 
 
 @media screen and (max-width: 1060px) {
     .grid-container {
         display: block;
-      /* display: grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: 1fr;
-      grid-template-areas: "main-content"
-                            "donation-area";  */
+        gap: 1px;
+    }
+    .carousel {
+        width: 50%;
+    }
+    .donation-area {
+        transform: translateY(10rem);
+    }
+    footer {
+        transform: translateY(15rem);
+    }
+    #partner-banner {
+        transform: translateY(5rem);
+    }
+    #index-footer {
+        transform: translateY(5rem);
+    }
 
-      /* Will need to adjust to below on a media query */
-      /* grid-template-columns: 1fr;
-      grid-template-rows: 1fr; 
-      grid-template-areas: "main-content" "donation-area"; */
+    .modal-content {
+      background-color: #fefefe;
+      margin: auto; 
+      padding: 80px;
+      width: 75%; /* Could be more or less, depending on screen size */
+    }
+}
+
+@media screen and (max-width: 953px) {
+    .grid-container {
+        display: block;
+        gap: 1px;
+    }
+    .carousel {
+        width: 50%;
+    }
+    .donation-area {
+        transform: translateY(15rem);
+    }
+    footer {
+        transform: translateY(25rem);
+    }
+    #index-footer {
+        transform: translateY(5rem);
+    }
+    #partner-banner {
+        transform: translateY(5rem);
+    }
+}
+
+@media screen and (max-width: 670px) {
+    .grid-container {
+      display: block;
       gap: 1px;
     }
     .carousel {
         width: 50%;
     }
+    .donation-area {
+        transform: translateY(15rem);
+    }
+    footer {
+        transform: translateY(25rem);
+    }
+    #index-footer {
+        transform: translateY(0);
+    }
+    #partner-banner {
+        transform: translateY(25rem);
+    }
+    #message{
+        width: 90%;
+    }
+    .social-icon {
+        width: 20%;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+   #partner-banner {
+     display: none;
+     transform: translateY(35rem);
+   }
+
+   #partner-banner-mobile {
+     display: block;
+   }
 }
 
 @media screen and (max-width: 630px) {
@@ -1260,6 +1346,7 @@ button {
 
    #partner-banner {
      display: none;
+     transform: translateY(25rem);
    }
 
    #partner-banner-mobile {
@@ -1268,6 +1355,33 @@ button {
 
     .carousel {
         width: 70%;
+    }
+    .donation-area {
+        transform: translateY(15rem);
+    }
+    footer {
+        transform: translateY(25rem);
+    }
+    /* #index-footer {
+        transform: translateY(0);
+    } */
+    #message{
+        width: 90%;
+    }
+    .social-icon {
+        width: 20%;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    .modal-content {
+      background-color: #fefefe;
+      margin: auto; 
+      padding: 2rem;
+      width: 100%; /* Could be more or less, depending on screen size */
+    }
+
+    .btn-wrapper#info-btn {
+        margin-top: 1.5rem;
     }
 
 }
@@ -1287,16 +1401,6 @@ button {
         padding: 1rem 1.5rem;
         font-size: 1rem;
     }
-
-   #partner-banner {
-     display: none;
-   }
-
-   #partner-banner-mobile {
-     display: block;
-     margin-bottom: 2rem;
-   }
-
     .carousel {
         width: 70%;
     }
@@ -1307,10 +1411,31 @@ button {
         /* margin-bottom: 1rem; */
         /* position: relative; */
     }
+    footer {
+        transform: translateY(35rem);
+    }
+    /* #index-footer {
+        transform: translateY(0);
+    } */
+    #message{
+        width: 90%;
+    }
+    .social-icon {
+        width: 20%;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
 
 }
 
 @media screen and (max-width: 470px) {
+
+    .collapsible h1 {
+        font-size: 2rem;
+    }    
+    .collapsible-content h1 {
+        font-size: 2rem;
+    }    
     .event-desc h2 {
         font-size: 0.8rem;
     }
@@ -1330,12 +1455,75 @@ button {
         padding: 0.5rem 1rem;
         font-size: 1rem;
     }
+    .btn-wrapper#info-btn {
+        margin-top: 1.5rem;
+    }
+
     .carousel {
         width: 90%;
+    }
+    footer {
+        transform: translateY(45rem);
+    }
+    #index-footer {
+        transform: translateY(0);
+    }
+    #partner-banner {
+        transform: translateY(45rem);
+    }
+    .centered {
+        max-width: 70%;
+        width: 70%;
+    }
+    #message{
+        width: 90%;
+    }
+    .social-icon {
+        width: 20%;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    footer p{
+        font-size:0.75rem;
+    }
+    .donation-area {
+        margin-right: 0rem;
+        margin-left: 0rem;
+    }
+    .modal-content p{
+        margin-left: 0;
+        margin-right: 0;
+        font-size: 1rem;
+    }
+    .news-events {
+        padding: 0;
+    }
+    p {
+        font-size: 1.3rem;
+    }
+    html {
+        font-size: 1.1rem;
+    }
+    .experience-outdoors ul {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .news-grid-item{
+        height: 15rem;
+        width: 15rem;
+        color: #fafafa;
+        padding-left: 3rem;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 1;
+        margin:auto;
+    }
+    .news-grid-item h2{
+        font-size: 1rem;
     }
 }
 
-@media screen and (max-width: 370px) {
+@media screen and (max-width: 380px) {
     .event-desc h2 {
         font-size: 0.8rem;
     }
@@ -1355,23 +1543,97 @@ button {
         padding: 0.5rem 1rem;
         font-size: 1rem;
     }
+    .btn-wrapper#info-btn {
+        margin-top: 1.5rem;
+    }
+
     .carousel {
         width: 90%;
     }
-
     
-.news-grid-item{
-    height: 15rem;
-    width: 15rem;
-    color: #fafafa;
-    padding-left: 3rem;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 1;
-    margin:auto;
-}
-.news-grid-item h2{
-    font-size: 1rem;
+    .news-grid-item{
+        height: 15rem;
+        width: 15rem;
+        color: #fafafa;
+        padding-left: 3rem;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 1;
+        margin:auto;
+    }
+    .news-grid-item h2{
+        font-size: 1rem;
+    }
+
+    footer {
+        transform: translateY(65rem);
+    }
+    #index-footer {
+        transform: translateY(0);
+    }
+    #partner-banner {
+        transform: translateY(65rem);
+    }
+
+    #message{
+        width: 90%;
+    }
+    .social-icon {
+        width: 20%;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .nav-list{
+        font-family: 'Bebas Neue', sans-serif;
+        width: 20rem;
+        height: 100vh;
+        background-color: #d7d4ed;
+        position: fixed;
+        top: 0;
+        right: -26rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 1500;
+        transition: all 650ms ease-in-out;
+    }
+
+    #partner-banner-mobile {
+        font-size: 1.5rem;
+    }
+    p {
+        font-size: 0.9rem;
+    }
+    html {
+        font-size: 0.9rem;
+    }
+    .collapsible-content {
+        padding: 0 8px;
+    }
+    .collapsible-content li{
+        padding-left: 1rem;
+        padding-right: 1rem;
+        font-size: 0.9rem;
+    }
+    .experience-outdoors li {
+        font-size: 0.9rem;
+    }
+    .event-info {
+        display: none;
+    }
+
 }
 
+@media screen and (max-width: 300px) {
+    footer {
+        transform: translateY(85rem);
+    }
+    #index-footer {
+        transform: translateY(0);
+    }
+    #partner-banner {
+        transform: translateY(85rem);
+    }
 }

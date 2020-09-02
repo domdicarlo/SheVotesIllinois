@@ -101,11 +101,6 @@ function injectModal(event) {
   cost.appendChild(document.createTextNode(event.cost));
   modalContent.appendChild(cost);
 
-  // add in a photo
-  // var modalPhoto = document.createElement("img");
-  // modalPhoto.src = getProperURL(event.image.path);
-  // modalContent.appendChild(modalPhoto);
-
   modalContent.appendChild(document.createElement("br"));
   modalContent.appendChild(document.createElement("br"));
 
@@ -158,71 +153,10 @@ function injectModal(event) {
     modalContent.appendChild(websiteHolder);
   }
 
-
-
   modalContent.appendChild(document.createElement("br"));
   modalContent.appendChild(document.createElement("br"));
 
   document.getElementsByClassName("modal")[0].appendChild(modalContent);
-
-
-  // var factOne = document.createElement("p");
-  // var factOneQuestion = document.createElement("span");
-  // factOneQuestion.setAttribute("id", "modal-fact-1-question");
-  // var factOneAnswer = document.createElement("p");
-  // factOneAnswer.setAttribute("id", "modal-fact-1-answer");
-  // factOne.appendChild(factOneQuestion);
-  // factOne.appendChild(document.createElement("b").appendChild(document.createTextNode(":")));
-  // modalContent.appendChild(factOne);
-  // modalContent.appendChild(document.createElement("br"));
-  // modalContent.appendChild(document.createElement("br"));
-  // modalContent.appendChild(factOneAnswer);
-  // modalContent.appendChild(document.createElement("br"));
-  // modalContent.appendChild(document.createElement("br"));
-
-  // var factTwo = document.createElement("p");
-  // var factTwoQuestion = document.createElement("span");
-  // factTwoQuestion.setAttribute("id", "modal-fact-2-question");
-  // var factTwoAnswer = document.createElement("p");
-  // factTwoAnswer.setAttribute("id", "modal-fact-2-answer");
-  // factTwo.appendChild(factTwoQuestion);
-  // factTwo.appendChild(document.createElement("b").appendChild(document.createTextNode(":")));
-  // modalContent.appendChild(factTwo);
-  // modalContent.appendChild(document.createElement("br"));
-  // modalContent.appendChild(document.createElement("br"));
-  // modalContent.appendChild(factTwoAnswer);
-  // modalContent.appendChild(document.createElement("br"));
-  // modalContent.appendChild(document.createElement("br"));
-
-
-
-  // document.getElementById("modal-name").appendChild(document.createTextNode(person.Name));
-
-  // document.getElementById("modal-title").appendChild(document.createTextNode(person.Title));
-  // var photo = document.createElement("img");
-  // photo.src = person.Photo.path;
-  // document.getElementById("modal-photo").appendChild(photo);
-  // document.getElementById("modal-fact-1-question").appendChild(document.createTextNode(info.));
-  // document.getElementById("modal-fact-2-question").appendChild(document.createTextNode(info.Interesting_Fact_2.Question));
-  // document.getElementById("modal-fact-1-answer").appendChild(document.createTextNode(info.Interesting_Fact_1.Answer));
-  // document.getElementById("modal-fact-2-answer").appendChild(document.createTextNode(info.Interesting_Fact_2.Answer));
-
-  // if (person.Interesting_Fact_3.Question !== "") {
-  //   var factThree = document.createElement("p");
-  //   var factThreeQuestion = document.createElement("span");
-  //   factThreeQuestion.setAttribute("id", "modal-fact-3-question");
-  //   var factThreeAnswer = document.createElement("p");
-  //   factThreeAnswer.setAttribute("id", "modal-fact-3-answer");
-  //   factThree.appendChild(factThreeQuestion);
-  //   factThree.appendChild(document.createElement("b").appendChild(document.createTextNode(":")));
-  //   modalContent.appendChild(factThree);
-  //   modalContent.appendChild(factThreeAnswer);
-  //   factThree.appendChild(document.createElement("br"));
-  //   factThree.appendChild(document.createElement("br"));
-
-  //   document.getElementById("modal-fact-3-answer").appendChild(document.createTextNode(person.Interesting_Fact_3.Answer));
-  //   document.getElementById("modal-fact-3-question").appendChild(document.createTextNode(person.Interesting_Fact_3.Question));
-  // }
 
 }
 
@@ -298,6 +232,7 @@ function injectEvent(event) {
   // event info button
   var eventBtnHolder = document.createElement("div");
   eventBtnHolder.setAttribute("class", "btn-wrapper");
+  eventBtnHolder.setAttribute("id", "info-btn");
   var eventBtn = document.createElement("a");
   eventBtn.setAttribute("id", "info-btn");
   eventBtn.setAttribute("class", "btn");
@@ -311,7 +246,6 @@ function injectEvent(event) {
   var newEventInfo = document.createElement("div");
   newEventInfo.setAttribute("class", "event-info");
   newEventInfo.innerText = event.info_plain_text;
-  newEventInfo.appendChild(eventBtnHolder);
 
   newEventDesc.appendChild(newEventTitle);
   newEventDesc.appendChild(document.createElement("br"));
@@ -320,8 +254,7 @@ function injectEvent(event) {
   newEventDesc.appendChild(document.createElement("br"));
   newEventDesc.appendChild(document.createElement("br"));
   newEventDesc.appendChild(newEventInfo);
-  newEventDesc.appendChild(document.createElement("br"));
-  newEventDesc.appendChild(document.createElement("br"));
+  newEventDesc.appendChild(eventBtnHolder);
 
   newEvent.appendChild(newEventImgHolder);
   newEvent.appendChild(newEventDesc);

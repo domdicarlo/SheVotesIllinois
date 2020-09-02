@@ -99,7 +99,56 @@
 
     <header>
         <!-- JS takes this and injects nav -->
-        <div id="nav-placeholder"></div>
+<div class="container" id="nav">
+    <nav>
+        <div class="nav-brand">
+            <a href="index.html">
+                <img src="images/logo_concept4.png" alt="SVI Logo" class="logo">
+            </a>
+        </div>
+
+        <div class="menu-icons open">
+            <i class="icon ion-md-menu"></i>
+        </div>
+
+        <ul class="nav-list" style="list-style:none">
+            <div class="menu-icons close">
+                <i class="icon ion-md-close"></i>
+            </div>
+            <div class="take-action-dropdown">
+                <li class="nav-item">
+                    <a href="who-we-are.html" class="nav-link">Who We Are</a>
+                </li>
+                <div class="take-action-dropdown-content">
+                    <a href="our-accomplishments.html">Our Accomplishments</a>
+                </div>
+
+            </div>
+            <li class="nav-item">
+                <a href="your-vote-matters.html" class="nav-link">Your Vote Matters</a>
+            </li>
+            <div class="take-action-dropdown">
+                <li class="nav-item">
+                    <a href="events.html" class="nav-link">Take Action</a>
+                </li>
+                <div class="take-action-dropdown-content">
+                    <a href="events.html">Events</a>
+                    <a href="guides.html">Guides & Toolkits</a>
+                    <a href="current-initiatives.html">Current Initiatives</a>
+                    <a href="lets-connect.php">Volunteer With Us</a>
+                </div>
+
+            </div>
+            <li class="nav-item">
+                <a href="policy-corner.html" class="nav-link">Policy Corner</a>
+            </li>
+            <li class="nav-item">
+                <a href="lets-connect.php" class="nav-link">Let's Connect</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
     </header>
 
     <main>
@@ -143,7 +192,7 @@
             <div class="form-group">
                 <label for="message" class="form-label">Message:</label>
                 <br>
-                <textarea class="form-control" rows="5" cols="50" id="message" name="message" placeholder="Enter Message..." tabindex="6"></textarea>
+                <textarea class="form-control" rows="5" cols="40" id="message" name="message" placeholder="Enter Message..." tabindex="6"></textarea>
             </div>
             <div class="form-group">
               <b>I would like to...</b><br><br>

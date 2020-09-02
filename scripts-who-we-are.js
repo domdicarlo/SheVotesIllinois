@@ -1,7 +1,6 @@
 
 
 function injectModal(person) {
-  // $("#modal-container").innertHTML='<div id="myModal" class="modal-container"> <div id="myModal" class="modal"> <!-- Modal content --> <div class="modal-content"> <span class="close">&times;</span> <h1 id="modal-name"></h1> <div id="modal-photo"> </div> <br> <br> <h2 id="modal-title"></h2> <br> <br> <p id="modal-about"><span>Bio:</span> <br><br></p> <br> <br> <p><span id="modal-fact-1-question"></span><b>:</b> <br><br> <p id="modal-fact-1-answer"></p></p> <br> <br> <p><span id="modal-fact-2-question"></span><b>:</b> <br><br> <p id="modal-fact-2-answer"></p> </p> <br> <br> <p><span id="modal-fact-3-question"></span><b>:</b> <br><br> <p id="modal-fact-3-answer"></p> </p> </div> </div> </div> '
   // first clear the code you already have
   var modalContent = document.getElementsByClassName("modal-content")[0];
   modalContent.parentNode.removeChild(modalContent);
@@ -42,8 +41,6 @@ function injectModal(person) {
   modalAbout.appendChild(document.createElement("br"));
   modalContent.appendChild(modalAbout);
 
-  modalContent.appendChild(document.createElement("br"));
-  modalContent.appendChild(document.createElement("br"));
 
   var factOne = document.createElement("p");
   var factOneQuestion = document.createElement("span");
@@ -53,11 +50,11 @@ function injectModal(person) {
   factOne.appendChild(factOneQuestion);
   factOne.appendChild(document.createElement("b").appendChild(document.createTextNode(":")));
   modalContent.appendChild(factOne);
-  modalContent.appendChild(document.createElement("br"));
-  modalContent.appendChild(document.createElement("br"));
+  // modalContent.appendChild(document.createElement("br"));
+  // modalContent.appendChild(document.createElement("br"));
   modalContent.appendChild(factOneAnswer);
-  modalContent.appendChild(document.createElement("br"));
-  modalContent.appendChild(document.createElement("br"));
+  // modalContent.appendChild(document.createElement("br"));
+  // modalContent.appendChild(document.createElement("br"));
 
   var factTwo = document.createElement("p");
   var factTwoQuestion = document.createElement("span");
@@ -67,11 +64,11 @@ function injectModal(person) {
   factTwo.appendChild(factTwoQuestion);
   factTwo.appendChild(document.createElement("b").appendChild(document.createTextNode(":")));
   modalContent.appendChild(factTwo);
-  modalContent.appendChild(document.createElement("br"));
-  modalContent.appendChild(document.createElement("br"));
+  // modalContent.appendChild(document.createElement("br"));
+  // modalContent.appendChild(document.createElement("br"));
   modalContent.appendChild(factTwoAnswer);
-  modalContent.appendChild(document.createElement("br"));
-  modalContent.appendChild(document.createElement("br"));
+  // modalContent.appendChild(document.createElement("br"));
+  // modalContent.appendChild(document.createElement("br"));
 
 
   document.getElementsByClassName("modal")[0].appendChild(modalContent);
@@ -99,8 +96,8 @@ function injectModal(person) {
     factThree.appendChild(document.createElement("b").appendChild(document.createTextNode(":")));
     modalContent.appendChild(factThree);
     modalContent.appendChild(factThreeAnswer);
-    factThree.appendChild(document.createElement("br"));
-    factThree.appendChild(document.createElement("br"));
+    // factThree.appendChild(document.createElement("br"));
+    // factThree.appendChild(document.createElement("br"));
 
     document.getElementById("modal-fact-3-answer").appendChild(document.createTextNode(person.Interesting_Fact_3.Answer));
     document.getElementById("modal-fact-3-question").appendChild(document.createTextNode(person.Interesting_Fact_3.Question));
