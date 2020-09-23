@@ -27,6 +27,7 @@ function injectModal(person) {
 
   var modalPhoto = document.createElement("img");
   modalPhoto.src = person.Photo.path;
+  modalPhoto.alt = "Image of ".concat(person.Name);
   modalContent.appendChild(modalPhoto);
 
   modalContent.appendChild(document.createElement("br"));
@@ -40,6 +41,7 @@ function injectModal(person) {
   modalAbout.appendChild(document.createElement("br"));
   modalAbout.appendChild(document.createElement("br"));
   modalContent.appendChild(modalAbout);
+  modalContent.appendChild(document.createElement("br"));
 
 
   var factOne = document.createElement("p");
@@ -53,8 +55,7 @@ function injectModal(person) {
   // modalContent.appendChild(document.createElement("br"));
   // modalContent.appendChild(document.createElement("br"));
   modalContent.appendChild(factOneAnswer);
-  // modalContent.appendChild(document.createElement("br"));
-  // modalContent.appendChild(document.createElement("br"));
+  modalContent.appendChild(document.createElement("br"));
 
   var factTwo = document.createElement("p");
   var factTwoQuestion = document.createElement("span");
@@ -67,8 +68,7 @@ function injectModal(person) {
   // modalContent.appendChild(document.createElement("br"));
   // modalContent.appendChild(document.createElement("br"));
   modalContent.appendChild(factTwoAnswer);
-  // modalContent.appendChild(document.createElement("br"));
-  // modalContent.appendChild(document.createElement("br"));
+  modalContent.appendChild(document.createElement("br"));
 
 
   document.getElementsByClassName("modal")[0].appendChild(modalContent);
@@ -86,7 +86,7 @@ function injectModal(person) {
   document.getElementById("modal-fact-2-answer").appendChild(document.createTextNode(person.Interesting_Fact_2.Answer));
 
   console.log(person.Interesting_Fact_3)
-  if (person.Interesting_Fact_3.Question !== "") {
+  if (person.Interesting_Fact_3.Question !== null) {
     var factThree = document.createElement("p");
     var factThreeQuestion = document.createElement("span");
     factThreeQuestion.setAttribute("id", "modal-fact-3-question");
@@ -96,8 +96,7 @@ function injectModal(person) {
     factThree.appendChild(document.createElement("b").appendChild(document.createTextNode(":")));
     modalContent.appendChild(factThree);
     modalContent.appendChild(factThreeAnswer);
-    // factThree.appendChild(document.createElement("br"));
-    // factThree.appendChild(document.createElement("br"));
+    // modalContent.appendChild(document.createElement("br"));
 
     document.getElementById("modal-fact-3-answer").appendChild(document.createTextNode(person.Interesting_Fact_3.Answer));
     document.getElementById("modal-fact-3-question").appendChild(document.createTextNode(person.Interesting_Fact_3.Question));
@@ -123,17 +122,44 @@ function addInDepartmentSections(staff, departments) {
 
     var h1 = document.createElement('h1');
     h1.textContent = department;
+    if (department == " Volunteer") {
+      h1.textContent = "Volunteers";
+    }
     document.getElementsByClassName("news-events")[0].appendChild(h1);
 
     var peopleGrid = document.createElement('div');
     peopleGrid.className = "people-grid";
-    var people = getAllStaffInDept(staff, department);
+    var people = getAllStaffInDept(staff, department).sort(function(a, b) {
+
+      if (a.Ordering == null && b.Ordering == null) {
+        var aLastName = a.Name.split(" ")[a.Name.split(" ").length - 1];
+        var bLastName = b.Name.split(" ")[b.Name.split(" ").length - 1];
+        if (aLastName < bLastName) {
+          return -1;
+        }
+        else {
+          return 1;
+        }
+      }
+      else if (a.Ordering == null) {
+        return 1;
+      }
+      else if (b.Ordering == null) {
+        return -1;
+      }
+      else {
+        return parseInt(a.Ordering) - parseInt(b.Ordering);
+      }
+    });
+    console.log(people);
+
 
     for (person of people) {
       var peopleGridItem = document.createElement('div');
       peopleGridItem.className = "people-grid-item";
 
       var personalPhoto = document.createElement("img");
+      personalPhoto.alt = "Image of ".concat(person.Name);
       personalPhoto.src = person.Photo.path;
 
       var nameCaption = document.createElement('p');
@@ -152,6 +178,10 @@ function addInDepartmentSections(staff, departments) {
       peopleGrid.appendChild(peopleGridItem);
     }
     document.getElementsByClassName("news-events")[0].appendChild(peopleGrid);
+    document.getElementsByClassName("news-events")[0].appendChild(document.createElement("br"));
+    document.getElementsByClassName("news-events")[0].appendChild(document.createElement("br"));
+    document.getElementsByClassName("news-events")[0].appendChild(document.createElement("br"));
+    document.getElementsByClassName("news-events")[0].appendChild(document.createElement("br"));
   }
 }
 
@@ -173,13 +203,13 @@ function addInDepartmentSections(staff, departments) {
 //     .then(() => addInDepartmentSections())
 //     .then(() => modalStuff());
 
-fetch('./cockpit-next/api/collections/collection/staff?token=account-fc24199754ba715c39fb54ca179458') // Call the fetch function passing the url of the API as a parameter
+fetch('./cockpit-next/api/collections/collection/staff?token=account-9bfaf529a8b75b42cb4d23eaa0196a') // Call the fetch function passing the url of the API as a parameter
   .then(collections => collections.json())
   .then(function(data) {
       // Your code for handling the data you get from the API
       departments = data.fields[1].options.options.split(",");
 
-      fetch('./cockpit-next/api/collections/get/staff?token=account-fc24199754ba715c39fb54ca179458')
+      fetch('./cockpit-next/api/collections/get/staff?token=account-9bfaf529a8b75b42cb4d23eaa0196a')
         .then(staff_entries => staff_entries.json())
         .then(function(staff_data) {
           staffMembers = staff_data.entries;
@@ -240,7 +270,7 @@ function modalStuff(staff) {
 
   // When the user clicks anywhere outside of the modal, close it
   window.onclick = function(event) {
-    if (event.target == modal) {
+    if ((event.target.id == "myModal")) {
       modal.style.display = "none";
     }
   }

@@ -1,3 +1,27 @@
+// converts fullcalendar date to our date format
+function getBasicDate(date) {
+  date = date.toString();
+  var tokens = date.split(" ");
+  var month = tokens[1];
+  var day = tokens[2];
+  var year = tokens[3].slice(-2);
+
+  if (month.includes("Jan")) { month = "01" }
+  if (month.includes("Feb")) { month = "02" }
+  if (month.includes("Mar")) { month = "03" }
+  if (month.includes("Apr")) { month = "04" }
+  if (month.includes("May")) { month = "05" }
+  if (month.includes("Jun")) { month = "06" }
+  if (month.includes("Jul")) { month = "07" }
+  if (month.includes("Aug")) { month = "08" }
+  if (month.includes("Sep")) { month = "09" }
+  if (month.includes("Oct")) { month = "10" }
+  if (month.includes("Nov")) { month = "11" }
+  if (month.includes("Dec")) { month = "12" }
+
+  return month.concat("/", day, "/", year); 
+}
+
 // converts a MM/DD/YY to a Month Day
 function prettifyDate(date) {
   var units = date.split("/");
@@ -84,6 +108,13 @@ function injectModal(event) {
     var timeString = "All day"
   }
   else {
+    console.log(event.start_time.start_time);
+    if (event.start_time.start_time.charAt(0) == "0") {
+      event.start_time.start_time = event.start_time.start_time.slice(1);
+    }
+    if (event.end_time.end_time.charAt(0) == "0") {
+      event.end_time.end_time = event.end_time.end_time.slice(1);
+    }
     var timeString = event.start_time.start_time.concat(" ", event.start_time.meridiem);
     timeString.concat(" - ", event.end_time.end_time, " ", event.end_time.meridiem);
   }
@@ -209,6 +240,7 @@ function injectEvent(event) {
   newEventImgHolder.setAttribute("class", "event-img");
   var newEventImg = document.createElement("img");
   newEventImg.src = event.image.path;
+  newEventImg.alt = event.title.concat(" image");
   newEventImgHolder.appendChild(newEventImg);
 
   // create the description div
@@ -223,6 +255,12 @@ function injectEvent(event) {
     var timeString = "All day"
   }
   else {
+    if (event.start_time.start_time.charAt(0) == "0") {
+      event.start_time.start_time = event.start_time.start_time.slice(1);
+    }
+    if (event.end_time.end_time.charAt(0) == "0") {
+      event.end_time.end_time = event.end_time.end_time.slice(1);
+    }
     var timeString = event.start_time.start_time.concat(" ", event.start_time.meridiem);
     timeString.concat(" - ", event.end_time.end_time, " ", event.end_time.meridiem);
   }
@@ -236,9 +274,10 @@ function injectEvent(event) {
   var eventBtn = document.createElement("a");
   eventBtn.setAttribute("id", "info-btn");
   eventBtn.setAttribute("class", "btn");
-  eventBtn.innerText = "Info";
+  eventBtn.innerText = "RSVP";
   eventBtnHolder.addEventListener('click', () => {
-      injectModal(eventDict[event.title]);
+      // injectModal(eventDict[event.title.concat(event.date)]);
+      window.open(eventDict[event.title.concat(event.date)].website, '_blank');
   });
   eventBtnHolder.appendChild(eventBtn);
 
@@ -269,8 +308,13 @@ document.addEventListener('DOMContentLoaded', function() {
   var calendar = new FullCalendar.Calendar(calendarEl, {
     eventClick: function(info) {
       // alert('Event: ' + info.event.title);
-      injectModal(eventDict[info.event.title]);
+      // console.log(eventDict);
+      // console.log(getBasicDate(info.event.start));
+      // injectModal(eventDict[info.event.title.concat(getBasicDate(info.event.start))]);
+      console.log(eventDict[info.event.title.concat(getBasicDate(info.event.start))].website);
+      window.open(eventDict[info.event.title.concat(getBasicDate(info.event.start))].website, '_blank');
     }
+    , height: 620
     , initialView: 'dayGridMonth'
     , events:[]
   });
@@ -279,54 +323,139 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   calendar.render();
 
+  function compareTwoDates(a, b) {
+    var eventADay = a.day;
+    var eventAMonth = a.month;
+    var eventAYear = a.year;
 
-  fetch('./cockpit-next/api/collections/get/events?token=account-fc24199754ba715c39fb54ca179458') // Call the fetch function passing the url of the API as a parameter
+    var eventBDay = b.day;
+    var eventBMonth = b.month;
+    var eventBYear = b.year;
+
+    if (eventAYear == eventBYear) {
+      if (eventAMonth == eventBMonth) {
+        console.log("enter");
+        return eventADay - eventBDay; 
+      }
+      else { 
+        return eventAMonth - eventBMonth; 
+      }
+    }
+    else { 
+      return eventAYear - eventBYear;
+    }
+  }
+
+  function compareTwoDates2(a2, b2) {
+    var eventADay = getDay(a2.date);
+    var eventAMonth = getMonth(a2.date);
+    var eventAYear = getYear(a2.date);
+    var eventATime = {year:eventAYear, month:eventAMonth, day:eventADay};
+
+    var eventBDay = getDay(b2.date);
+    var eventBMonth = getMonth(b2.date);
+    var eventBYear = getYear(b2.date);
+    var eventBTime = {year:eventBYear, month:eventBMonth, day:eventBDay};
+
+    if (eventAYear == eventBYear) {
+      if (eventAMonth == eventBMonth) {
+        return eventADay - eventBDay; 
+      }
+      else { 
+        return eventAMonth - eventBMonth; 
+      }
+    }
+    else { 
+      return eventAYear - eventBYear;
+    }
+  }
+
+
+  fetch('./cockpit-next/api/collections/get/events?token=account-9bfaf529a8b75b42cb4d23eaa0196a') // Call the fetch function passing the url of the API as a parameter
     .then(collection => collection.json())
     .then(function(data) {
       var count = 0;
       var index = 0;
       // for (event of data.entries) {
-      for (index = data.entries.length - 1; index > -1; index--) {
-        var event = data.entries[index];
+      var events = data.entries.sort(function(date1,date2) {
+        return compareTwoDates2(date1,date2);
+      });
+      // var events = data.entries;
+      // var events = data.entries;
+      // for (index = data.entries.length - 1; index > -1; index--) {
+      console.log(events);
+      for (event of events) {
+        // var event = data.entries[index];
         // add to event dict
-        eventDict[event.title] = event;
+        eventDict[event.title.concat(event.date)] = event;
 
         var eventDate = convertDateToISO(event.date);
         var nextEvent = {title:event.title, start:eventDate, 
                           end:eventDate}
-        console.log(nextEvent);
         calendar.addEvent(nextEvent);
 
         // add the next 5 events
         if (count < 5) {
           var currentTime = new Date();
           var currentDay = currentTime.getDate();
-          var currentMonth = currentTime.getMonth();
+          var currentMonth = currentTime.getMonth() + 1;
           var currentYear = currentTime.getFullYear();
+
+          var currentTime = {year:currentYear, month:currentMonth, day:currentDay};
 
           var eventDay = getDay(event.date);
           var eventMonth = getMonth(event.date);
           var eventYear = getYear(event.date);
-          console.log(currentDay);
-          console.log(currentMonth);
-          console.log(currentYear);
-
-          console.log(eventDay);
-          console.log(eventMonth);
-          console.log(eventYear);
-          if (currentYear < eventYear) {
-            injectEvent(event);
-          }
-          else if (currentYear == eventYear) {
-            if (currentMonth < eventMonth) {
-              injectEvent(event);
-            }
-            else if (currentMonth == eventMonth) {
+          var eventTime = {year:eventYear, month:eventMonth, day:eventDay};
+          // if (compareTwoDates(currentTime, eventTime) <= 0)
+          // {
+          //   console.log(currentTime.day);
+          //   console.log(eventTime.day);
+          //   console.log(compareTwoDates(currentTime, eventTime));
+          //   injectEvent(event);
+          // }
+          console.log(currentDay)
+          console.log(currentMonth)
+          console.log(currentYear)
+          console.log(eventDay)
+          console.log(eventMonth)
+          console.log(eventYear)
+          if (currentYear == eventYear) {
+            if (currentMonth == eventMonth) {
               if (currentDay <= eventDay) {
                 injectEvent(event);
+                count += 1;
+              }
+            }
+            else { 
+              if (currentMonth < eventMonth) {
+                injectEvent(event);
+                count += 1;
               }
             }
           }
+          else { 
+            if (currentYear < eventYear) {
+              injectEvent(event);
+              count += 1;
+            }
+          }
+          // if (compareTwoDates(eventTime, eventTime) { injectEvent(event); }
+          // if (currentYear < eventYear) {
+          //   injectEvent(event);
+          // }
+          // else if (currentYear == eventYear) {
+          //   if (currentMonth < eventMonth) {
+          //     injectEvent(event);
+          //   }
+          //   else if (currentMonth == eventMonth) {
+          //     if (currentDay <= eventDay) {
+          //       console.log(eventDay);
+          //       console.log(currentDay);
+          //       injectEvent(event);
+          //     }
+          //   }
+          // }
         }
       }
     })
@@ -340,7 +469,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
 
-var modal = document.getElementById("myModal");
+  var modal = document.getElementById("myModal");
 
   if (event.target == modal) {
     modal.style.display = "none";
@@ -353,7 +482,7 @@ $(document).ready(function(){
     infinite:true,
     arrows:true,
     autoplay:true,
-    autplaySpeed:1000,
+    autoplaySpeed:5000,
     dots:true
   });
 });

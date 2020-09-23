@@ -8,9 +8,10 @@
 }
 
 html{
-    font-family: 'Nunito', sans-serif;
-    font-size: 14px;
+    font-family: "Montserrat-Medium", "sans-serif";
+    font-size: 16px;
     box-sizing: border-box;
+    word-break: break-word;
 }
 
 a{
@@ -22,12 +23,18 @@ a{
     /* I had to add the above to navigation.html. Go there to change it */
 }
 
+/* The sticky class is added to the navbar with JS when it reaches its scroll position
+.sticky {
+  position: fixed;
+  top: 0;
+} */
+
 .policy ul{
     list-style-type: circle;
 }
 
 p{
-    font-size: 1.6rem;
+    font-size: 1rem;
 }
 
 img{
@@ -41,7 +48,8 @@ section{
 }
 
 h1 {
-    font-family: 'Bebas Neue'
+    font-family: 'Montserrat-Bold';
+    color: #1c7fbd;
 }
 
 /*header*/
@@ -59,6 +67,11 @@ header{
     max-width: 90rem;
     margin: 0 auto;
     padding: 0 1.5rem;
+}
+
+.container #nav {
+    padding-left: 0;
+    padding-right: 0;
 }
 
 nav{
@@ -86,7 +99,7 @@ nav{
 }
 
 .nav-list{
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Montserrat-Bold';
     width: 25rem;
     height: 100vh;
     background-color: #d7d4ed;
@@ -106,9 +119,9 @@ nav{
 }
 
 .close{
-    position: absolute;
-    top: 1rem;
-    left: 1.5rem;
+    /* position: absolute; */
+    float: left;
+    transform: translate(-3.5rem, -4rem);
 }
 
 nav {
@@ -124,8 +137,8 @@ nav {
 }
 
 .nav-link{
-    font-size: 2.6rem;
-    text-transform: uppercase;
+    font-size: 1.6rem;
+    /* text-transform: uppercase; */
     color: rgba(0,0,0,.7);
 }
 
@@ -141,13 +154,16 @@ nav {
     text-align: center;
 }
 
-.marquee img {
+#desktop-marquee{
     max-width: 90rem;
     height: auto;
     /* border-top:  white solid 1px;
     border-bottom:  white solid 1px; */
     /* margin-bottom: 1rem; */
     /* position: relative; */
+}
+#mobile-marquee{
+    height: 0rem;
 }
 
 /* hero */
@@ -175,6 +191,7 @@ nav {
     background-size: cover;
     position: relative;
     margin-bottom: 4rem;
+    /* word-break: normal; */
 }
 
 .navbar-homepage {
@@ -228,7 +245,7 @@ nav {
 
 .main-message #subtitle {
     text-transform: none;
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Montserrat-Bold';
     display: inline-block;
     grid-area: subtitle;
 }
@@ -236,6 +253,7 @@ nav {
 #info-btn {
     font-size: 1.5rem;
     font-family: "Nunito Bold", sans-serif;
+  font-family: "Montserrat-Medium", "sans-serif";
     /* margin-left: rem; */
     /* height: 3rem; */
 }
@@ -265,22 +283,26 @@ nav {
 
 .btn {
     cursor: pointer;    
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Montserrat-Bold';
     background-color: #f04e52;
     border-radius: 2rem;
     color: #fafafa;
     border-color: red;
     /* display: inline-block; */
-    padding: 1.5rem 2rem;
-    text-transform: uppercase;
+    padding: 1.0rem 1.5rem;
+    /* text-transform: uppercase; */
     transition: background-color 650ms;
     text-align: center;
     /* margin-right: 3rem; */
-    font-size: 2.5rem;
+    font-size: 1.3rem;
     font-style: bold;
     margin-top: auto;
     margin-bottom: auto;
+    word-break: normal;
+}
 
+.btn a {
+    word-break: normal;
 }
 
 .btn:hover{
@@ -302,17 +324,18 @@ nav {
 }
 
 .experience-outdoors h1 {
+    font-family: 'Montserrat-Bold';
     font-size: 3rem;
     margin-bottom: 1rem;
 }
 
 .experience-outdoors p {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
 }
 
 .experience-outdoors ul {
-    font-size: 20px;
+    font-size: 1rem;
     padding-left:5rem;
     padding-right:5rem;
     /* padding-top: 2rem;
@@ -320,9 +343,8 @@ nav {
 }
 
 .experience-outdoors li {
-    font-size: 20px;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
 }
 
 .experience-outdoors a:link {
@@ -344,7 +366,7 @@ nav {
 
 .title-heading{
     text-align: left;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     margin-bottom: 5rem;
 }
 
@@ -354,7 +376,7 @@ nav {
 }
 
 .title-heading h1{
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: "Montserrat-Bold", sans-serif;
     font-size: 3rem;
     margin: .5rem 0 1rem;
     margin-bottom: 1rem;
@@ -377,7 +399,7 @@ nav {
 }
 
 .news-events h1{
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: "Montserrat-Bold", sans-serif;
     font-size: 2rem;
     margin-top: 1.5rem;
 
@@ -398,6 +420,7 @@ nav {
 }
 
 .news-grid-item{
+    display:block;
     height: 25rem;
     width: 25rem;
     padding: 3rem;
@@ -406,6 +429,13 @@ nav {
     cursor: pointer;
     z-index: 1;
     margin:auto;
+}
+
+.flex-wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between
 }
 
 .news-grid-item::before{
@@ -437,9 +467,9 @@ nav {
 }
 
 .news-grid-item h1{
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: "Montserrat-Bold", sans-serif;
     font-size: 1.7rem;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     margin: 2rem 0;
 }
 
@@ -450,6 +480,7 @@ nav {
 }
 
 .social-icon-container h1 {
+    font-family: "Montserrat-Bold", sans-serif;
     font-size: 2rem;
     margin-bottom: 1.5rem;
 }
@@ -569,6 +600,38 @@ nav {
   font-size: 2rem;
 }
 
+.blue-text {
+    color: #1c7fbd;
+}
+
+.homepage-donate {
+    max-width: 20rem;
+    margin: auto;
+    text-decoration: none;
+    font-size: 2rem;
+}
+.homepage-donate a:link{
+    max-width: 15rem;
+    margin: auto;
+    text-decoration: none;
+}
+
+.btn a:visited {
+    color: #49b3c6;
+    text-decoration: none;
+    font-weight: bold;
+}
+.btn a:link {
+    color: #49b3c6;
+    text-decoration: none;
+    font-weight: bold;
+}
+.btn a:visited {
+    color: #49b3c6;
+    text-decoration: none;
+    font-weight: bold;
+}
+
 .centered-two {
   position: relative;
   top: 20%;
@@ -579,17 +642,23 @@ nav {
 }
 
 footer {
+    margin-top: 16rem;
     font-family: "Montserrat-Bold", sans-serif;
     background-color: #f04e52;
     color: white;
     text-align: center;
     padding: 0.7rem 0;
     width: 100%;
+    /* position: absolute;
+    bottom: 0; */
+}
+
+#submit-footer {
+    margin-top: 45rem;
 }
 
 #special-footer {
-    position: absolute;
-    bottom: 0;
+    margin-top:0rem;
 }
 
 footer p {
@@ -639,6 +708,15 @@ footer a:hover {
     src: url("fonts/Nunito-Bold/Nunito-Bold.ttf") format("ttf");
     src: url("fonts/Nunito-Bold/Nunito-Bold.woff") format("woff");
     src: url("fonts/Nunito-Bold/Nunito-Bold.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Montserrat-Medium";
+    src: url("fonts/Montserrat-Medium/Montserrat-Medium.eot") format("eot");
+    src: url("fonts/Montserrat-Medium/Montserrat-Medium.svg") format("svg");
+    src: url("fonts/Montserrat-Medium/Montserrat-Medium.ttf") format("ttf");
+    src: url("fonts/Montserrat-Medium/Montserrat-Medium.woff") format("woff");
+    src: url("fonts/Montserrat-Medium/Montserrat-Medium.woff2") format("woff2");
 }
 
 /* @font-face {
@@ -701,7 +779,7 @@ footer a:hover {
 .donation-area-text p{
   text-align: left;
   padding: 1.5rem 1.5rem;
-  font-size: 1.3rem;
+  font-size: 1rem;
 }
 
 .donation-area-text {
@@ -721,6 +799,7 @@ footer a:hover {
 }
 
 .news-grid-item{
+    /* word-break: normal; */
     height: 20rem;
     color: #fafafa;
     position: relative;
@@ -754,7 +833,7 @@ footer a:hover {
 }
 
 .people-grid-item {
-    line-height: 1.5rem;
+    line-height: 1.2rem;
     margin: auto;
     margin-bottom: 5rem;
     margin-top: 4rem;
@@ -763,32 +842,33 @@ footer a:hover {
     position: relative;
     /* display: flex;
     flex-direction: column; */
-    cursor: pointer;
+    /* cursor: pointer; */
     display: inline-block;
-    margin-left: 1rem;
-    margin-right: 1rem;
+    margin-left: 0.6rem;
+    margin-right: 0.6rem;
     vertical-align: top;
 
 }
 
 .people-grid-item p {
-    font-size: 1rem;
+    font-size: 0.9rem;
     padding-top: 0rem;
     padding-bottom: 0rem;
 }
 
 .people-grid-name {
-    font-family: "Nunito-Bold"
+  font-family: "Montserrat-Bold", "sans-serif";
 }
 
-.people-grid-name p {
-    font-family: "Nunito-Bold";
-}
 
 
 /* Style the button that is used to open and close the collapsible content */
 .collapsible {
   background-color: #eee;
+
+    background-color: #a0ddeb;
+    background-color: #c4eaf2;
+    /* background-color: #ebf9fc; */
   color: #444;
   cursor: pointer;
   padding: 18px;
@@ -799,13 +879,40 @@ footer a:hover {
   font-size: 15px;
 }
 
+a.collapsible-content {
+
+}
+
 .collapsible h1 {
+    font-family: "Montserrat-Bold", sans-serif;
     font-size: 2rem;
+    /* color: #1c7fbd; */
+    color: #444;
+}
+
+.collapsible-content>img {
+    width: 70%;
+    max-width: 70%;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    text-align: center;
+    display:block;
+    float:none;
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 .collapsible-active, .collapsible:hover {
   background-color: #ccc;
+  background-color: #4fbdd6;
+  background-color: #6acfe6;
+  background-color: #a2dbe8;
+}
+.collapsible-active h1, .collapsible:hover h1{
+  /* background-color: #ccc;
+  background-color: #4fbdd6; */
+    color: black;
+    /* color: #f04e52; */
 }
 
 /* Style the collapsible content. Note: hidden by default */
@@ -814,30 +921,30 @@ footer a:hover {
   display: none;
   overflow: hidden;
   background-color: #f1f1f1;
+    background-color: #ebf9fc;
+  /* background-color: #f7dcdd; */
 
 }
 
 .collapsible-content h1 {
+    font-family: 'Montserrat-Bold';
     text-align: center;
     font-size: 2.0rem;
 }
 
 .collapsible-content ol {
-    font-size: 20px;
-    padding-left:5rem;
-    padding-right:5rem;
+    padding-left:3rem;
+    padding-right:3rem;
     /* padding-top: 2rem;
     padding-bottom: 2rem; */
 }
 .collapsible-content ul {
-    font-size: 20px;
     padding-left:5rem;
     padding-right:5rem;
     /* padding-top: 2rem;
     padding-bottom: 2rem; */
 }
 .collapsible-content li {
-    font-size: 20px;
     /* padding-top: 0.5rem;
     padding-bottom: 0.5rem; */
 }
@@ -845,14 +952,33 @@ footer a:hover {
     padding: 1.5rem;
 }
 .collapsible-content p {
-    padding: 1.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
 }
 #sublist ul {
-    font-size: 20px;
     padding-left:2rem;
     padding-right:2rem;
     padding-top: 0;
     padding-bottom: 0;
+}
+
+.article {
+    font-size: 1rem;
+    /* word-break: normal; */
+}
+
+span .article {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    /* word-break: normal; */
+}
+
+.article-heading {
+    font-family: "Nunito", sans-serif;
+  font-family: "Montserrat-Medium", "sans-serif";
+    font-size: 1.8rem;
 }
 
 .collapse-button {
@@ -861,21 +987,24 @@ footer a:hover {
 }
 
 .collapse-button h1 {
+    font-family: 'Montserrat-Bold';
     display: inline;
 }
 
 .collapsible-content a:link {
-    color: #49b3c6;
+    color: #1c7fbd;
     text-decoration: underline;
     font-weight: bold;
 }
 .collapsible-content a:visited {
     color: #49b3c6;
+    color: #1c7fbd;
     text-decoration: underline;
     font-weight: bold;
 }
 .collapsible-content a:hover {
     color: #49b3c6;
+    color: #1c7fbd;
     opacity: 0.5;
     text-decoration: underline;
     font-weight: bold;
@@ -970,13 +1099,13 @@ footer a:hover {
 }
 
 .modal span {
-    font-family: "Nunito-Bold";
+  font-family: "Montserrat-Bold", "sans-serif";
 }
 
 /* The Close Button */
 .close {
   color: #aaa;
-  float: right;
+  /* float: right; */
   font-size: 28px;
   font-weight: bold;
 }
@@ -1048,11 +1177,13 @@ footer a:hover {
 .take-action-dropdown {
   position: relative;
   display: inline-block;
+  /* word-break: normal; */
 }
 
 /* Dropdown Content (Hidden by Default) */
 .take-action-dropdown-content {
   font-family: "Nunito-Bold", sans-serif;
+  font-family: "Montserrat-Medium", "sans-serif";
   display: none;
   position: absolute;
   background-color: #f1f1f1;
@@ -1067,6 +1198,12 @@ footer a:hover {
   padding: 12px 16px;
   text-decoration: none;
   display: block;
+  /* word-break: normal; */
+}
+
+.take-action-dropdown-content {
+    font-size: 0.9rem;
+    word-break: normal;
 }
 
 /* Change color of dropdown links on hover */
@@ -1081,13 +1218,13 @@ footer a:hover {
 
 /* Handle the let's connect form */
 .form-group {
-    font-size: 1.5rem;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    font-size: 1.0rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
 }
 
 .form-group input {
-    font-size: 1.5rem;
+    font-size: 1.0rem;
 }
 
 .form-group input[type=submit] {
@@ -1096,7 +1233,7 @@ footer a:hover {
 }
 
 .form-group textarea {
-    font-size: 1.5rem;
+    font-size: 1.0rem;
 }
 
 button {
@@ -1155,12 +1292,36 @@ button {
     padding-bottom: 1rem;
 }
 
+.accomplishments-h2 {
+    font-size: 1.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.accomplishments h3{
+    font-size: 1.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
 .caption {
     text-align: center;
     margin: auto;
     padding-top:1rem;
     padding-bottom:1rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
+}
+
+.no-new-tab a {
+    /* word-break: normal; */
+}
+
+a {
+    word-break: break-word;
+}
+
+#calendar {
+    font-family: "Nunito", sans-serif;
 }
 
 /* @media screen and (max-width: 500px) {
@@ -1179,7 +1340,11 @@ button {
     }
 } */
 
-/* Fix for navbar */
+@media screen and (min-height: 1200px) {
+    #submit-footer {
+        margin-top: 55rem;
+    }
+}
 @media screen and (min-width: 1280px) {
     header{
         height: 8rem;
@@ -1199,20 +1364,26 @@ button {
         flex-direction: row;
         transition: initial;
     }
+    .take-action-dropdown-content {
+        font-size: 1.0rem;
+    }
+    
 
     .menu-icons{
         display: none;
     }
 
     .nav-item{
-        margin: 0 2.5rem;
+        margin: 0 1.5rem;
+        cursor: pointer;
     }
 
     .nav-link,
     .current{
         color: #fafafa;
         position: relative;
-        font-size: 1.9rem;
+        font-size: 1.3rem;
+        cursor: pointer;
     }
 
     .nav-link::before,
@@ -1229,6 +1400,11 @@ button {
         transition: transform 650ms;
     }
 
+    #nav {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
     .current::before{
         transform: scaleX(1);
     }
@@ -1240,6 +1416,9 @@ button {
 
 
 @media screen and (max-width: 1060px) {
+    #submit-footer {
+        margin-top: 25rem;
+    }
     .grid-container {
         display: block;
         gap: 1px;
@@ -1247,10 +1426,10 @@ button {
     .carousel {
         width: 50%;
     }
-    .donation-area {
-        transform: translateY(10rem);
-    }
-    footer {
+    /* .donation-area 
+    { transform: translateY(10rem);
+    } */
+    /* footer {
         transform: translateY(15rem);
     }
     #partner-banner {
@@ -1258,7 +1437,7 @@ button {
     }
     #index-footer {
         transform: translateY(5rem);
-    }
+    } */
 
     .modal-content {
       background-color: #fefefe;
@@ -1276,10 +1455,10 @@ button {
     .carousel {
         width: 50%;
     }
-    .donation-area {
+    /* .donation-area {
         transform: translateY(15rem);
-    }
-    footer {
+    } */
+    /* footer {
         transform: translateY(25rem);
     }
     #index-footer {
@@ -1287,10 +1466,13 @@ button {
     }
     #partner-banner {
         transform: translateY(5rem);
-    }
+    } */
 }
 
 @media screen and (max-width: 670px) {
+    .modal img {
+        height: 15rem;
+    }
     .grid-container {
       display: block;
       gap: 1px;
@@ -1298,10 +1480,10 @@ button {
     .carousel {
         width: 50%;
     }
-    .donation-area {
+    /* .donation-area {
         transform: translateY(15rem);
-    }
-    footer {
+    } */
+    /* footer {
         transform: translateY(25rem);
     }
     #index-footer {
@@ -1309,7 +1491,7 @@ button {
     }
     #partner-banner {
         transform: translateY(25rem);
-    }
+    } */
     #message{
         width: 90%;
     }
@@ -1356,12 +1538,12 @@ button {
     .carousel {
         width: 70%;
     }
-    .donation-area {
+    /* .donation-area {
         transform: translateY(15rem);
-    }
-    footer {
+    } */
+    /* footer {
         transform: translateY(25rem);
-    }
+    } */
     /* #index-footer {
         transform: translateY(0);
     } */
@@ -1382,6 +1564,15 @@ button {
 
     .btn-wrapper#info-btn {
         margin-top: 1.5rem;
+    }
+    
+    .collapsible-content>img {
+        width: 80%;
+        max-width: 80%;
+    }
+
+    .close{
+        transform: translate(0,0);
     }
 
 }
@@ -1404,16 +1595,24 @@ button {
     .carousel {
         width: 70%;
     }
-    .marquee img {
+    #desktop-marquee {
         height: 0rem;
         /* border-top:  white solid 1px;
         border-bottom:  white solid 1px; */
         /* margin-bottom: 1rem; */
         /* position: relative; */
     }
-    footer {
-        transform: translateY(35rem);
+    .marquee {
+        margin-bottom: 2rem;
     }
+    #mobile-marquee {
+        max-width: 90rem;
+        height: auto;
+        margin-bottom: 2rem;
+    }
+    /* footer {
+        transform: translateY(35rem);
+    } */
     /* #index-footer {
         transform: translateY(0);
     } */
@@ -1429,6 +1628,15 @@ button {
 }
 
 @media screen and (max-width: 470px) {
+    .close{
+        transform: translate(-0.2rem,-1rem);
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    .experience-outdoors h1 {
+        font-size: 2rem;
+    }
 
     .collapsible h1 {
         font-size: 2rem;
@@ -1462,7 +1670,7 @@ button {
     .carousel {
         width: 90%;
     }
-    footer {
+    /* footer {
         transform: translateY(45rem);
     }
     #index-footer {
@@ -1470,7 +1678,7 @@ button {
     }
     #partner-banner {
         transform: translateY(45rem);
-    }
+    } */
     .centered {
         max-width: 70%;
         width: 70%;
@@ -1482,9 +1690,6 @@ button {
         width: 20%;
         margin-left: 1rem;
         margin-right: 1rem;
-    }
-    footer p{
-        font-size:0.75rem;
     }
     .donation-area {
         margin-right: 0rem;
@@ -1499,16 +1704,14 @@ button {
         padding: 0;
     }
     p {
-        font-size: 1.3rem;
-    }
-    html {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
     .experience-outdoors ul {
         padding-left: 1rem;
         padding-right: 1rem;
     }
     .news-grid-item{
+        /* word-break: normal; */
         height: 15rem;
         width: 15rem;
         color: #fafafa;
@@ -1521,9 +1724,28 @@ button {
     .news-grid-item h2{
         font-size: 1rem;
     }
+    .nav-list{
+        /* font-family: 'Bebas Neue', sans-serif; */
+        font-family: 'Montserrat-Bold';
+        width: 22rem;
+        height: 100vh;
+        background-color: #d7d4ed;
+        position: fixed;
+        top: 0;
+        right: -26rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 1500;
+        transition: all 650ms ease-in-out;
+    }
 }
 
 @media screen and (max-width: 380px) {
+    .fc table {
+        font-size: 0.8rem;
+    }
     .event-desc h2 {
         font-size: 0.8rem;
     }
@@ -1534,7 +1756,7 @@ button {
         font-size: 0.5rem;
     }
     .container {
-        width: 90%;
+        width: 100%;
         max-width: 90rem;
         margin: 0 auto;
         padding: 0 1.5rem;
@@ -1565,15 +1787,15 @@ button {
         font-size: 1rem;
     }
 
-    footer {
+    /* footer {
         transform: translateY(65rem);
-    }
-    #index-footer {
+    } */
+    /* #index-footer {
         transform: translateY(0);
     }
     #partner-banner {
         transform: translateY(65rem);
-    }
+    } */
 
     #message{
         width: 90%;
@@ -1585,7 +1807,8 @@ button {
     }
 
     .nav-list{
-        font-family: 'Bebas Neue', sans-serif;
+        /* font-family: 'Bebas Neue', sans-serif; */
+        font-family: 'Montserrat-Bold';
         width: 20rem;
         height: 100vh;
         background-color: #d7d4ed;
@@ -1615,10 +1838,8 @@ button {
     .collapsible-content li{
         padding-left: 1rem;
         padding-right: 1rem;
-        font-size: 0.9rem;
     }
     .experience-outdoors li {
-        font-size: 0.9rem;
     }
     .event-info {
         display: none;
@@ -1627,7 +1848,10 @@ button {
 }
 
 @media screen and (max-width: 300px) {
-    footer {
+    .modal img {
+        height: 12rem;
+    }
+    /* footer {
         transform: translateY(85rem);
     }
     #index-footer {
@@ -1635,5 +1859,5 @@ button {
     }
     #partner-banner {
         transform: translateY(85rem);
-    }
+    } */
 }

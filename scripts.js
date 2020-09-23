@@ -1,4 +1,40 @@
 
+var allLinks = document.getElementsByTagName("a");
+console.log(allLinks);
+for (var i = 0; i < allLinks.length; i++) {
+  console.log("got em");
+  if (allLinks[i].className !== "") {
+    if (allLinks[i].className.includes("no-new-tab")) {
+      // do nothing
+    }
+    else {
+      allLinks[i].target = "_blank";
+      console.log(allLinks[i]);
+    }
+  }
+  else {
+      allLinks[i].target = "_blank";
+      console.log(allLinks[i]);
+  }
+}
+
+// When the user scrolls the page, execute myFunction
+window.onscroll = function() {myFunction()};
+
+// Get the navbar
+var navbar = document.getElementById("nav");
+
+// Get the offset position of the navbar
+var sticky = navbar.offsetTop;
+
+// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
 
 // collapsibles, open and close
 var coll = document.getElementsByClassName("collapsible");
@@ -9,11 +45,15 @@ var i;
 for (i = 0; i < coll.length; i++) {
   coll[i].addEventListener("click", function() {
     this.classList.toggle("collapsible-active");
+    var h1Node = this.childNodes[1];
+    console.log(h1Node);
     var content = this.nextElementSibling;
     if (content.style.display === "block") {
       content.style.display = "none";
+      h1Node.innerText = h1Node.innerText.replace("-", "+");
     } else {
       content.style.display = "block";
+      h1Node.innerText = h1Node.innerText.replace("+", "-");
     }
   });
 }
@@ -88,9 +128,3 @@ function drawCanvas() {
 }
 
 drawCanvas();
-
-
-// initialize owl carousel
-$(document).ready(function(){
-  $(".owl-carousel").owlCarousel();
-});

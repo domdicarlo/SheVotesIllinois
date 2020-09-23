@@ -1427,3 +1427,109 @@ A VERTICAL event
     color: inherit; /* natural color for navlinks */
   }
 
+
+
+@media screen and (max-width: 380px) {
+    .fc-col-header table {
+        font-size: 0.1rem;
+    }
+    .event-desc h2 {
+        font-size: 0.8rem;
+    }
+    .event-desc {
+        font-size: 0.6rem;
+    }
+    .event-info {
+        font-size: 0.5rem;
+    }
+    .container {
+        width: 100%;
+        max-width: 90rem;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+    }
+    .btn#info-btn {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+    }
+    .btn-wrapper#info-btn {
+        margin-top: 1.5rem;
+    }
+
+    .carousel {
+        width: 90%;
+    }
+    
+    .news-grid-item{
+        height: 15rem;
+        width: 15rem;
+        color: #fafafa;
+        padding-left: 3rem;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 1;
+        margin:auto;
+    }
+    .news-grid-item h2{
+        font-size: 1rem;
+    }
+
+    /* footer {
+        transform: translateY(65rem);
+    } */
+    /* #index-footer {
+        transform: translateY(0);
+    }
+    #partner-banner {
+        transform: translateY(65rem);
+    } */
+
+    #message{
+        width: 90%;
+    }
+    .social-icon {
+        width: 20%;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .nav-list{
+        /* font-family: 'Bebas Neue', sans-serif; */
+        font-family: 'Montserrat-Bold';
+        width: 20rem;
+        height: 100vh;
+        background-color: #d7d4ed;
+        position: fixed;
+        top: 0;
+        right: -26rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 1500;
+        transition: all 650ms ease-in-out;
+    }
+
+    #partner-banner-mobile {
+        font-size: 1.5rem;
+    }
+    p {
+        font-size: 0.9rem;
+    }
+    html {
+        font-size: 0.9rem;
+    }
+    .collapsible-content {
+        padding: 0 8px;
+    }
+    .collapsible-content li{
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .experience-outdoors li {
+    }
+    .event-info {
+        display: none;
+    }
+
+}

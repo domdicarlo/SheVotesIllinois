@@ -1,7 +1,11 @@
-fetch('./cockpit-next/api/collections/get/current_bills?token=account-fc24199754ba715c39fb54ca179458') // Call the fetch function passing the url of the API as a parameter
+fetch('./cockpit-next/api/collections/get/current_bills?token=account-9bfaf529a8b75b42cb4d23eaa0196a') // Call the fetch function passing the url of the API as a parameter
   .then(collection => collection.json())
   .then(function(data) {
-    bills = data.entries;
+    bills = data.entries.sort(function(a, b){
+      if (a.name < b.name) { return -1; }
+      if (a.name > b.name) { return 1; }
+      return 0;
+    });
     console.log(data);
     console.log(bills);
     for (bill of bills) {
@@ -23,6 +27,7 @@ function insertBill(bill) {
     var bill_name_anchor = document.createElement('a');
     bill_name_anchor.innerText = bill_name;
     bill_name_anchor.href = bill_link;
+    bill_name_anchor.target = "_blank";
     bill_node.appendChild(bill_name_anchor);
     bill_node.appendChild(document.createTextNode(bill_info));
     bill_node_list_item.appendChild(bill_node);

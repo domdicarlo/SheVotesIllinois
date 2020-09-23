@@ -19,7 +19,7 @@
       $partner = isset($_POST['partner']);
       $subject = "New She Votes Illinois Contact Us Form Submission";
 
-      $toEmail = "dominicguliodicarlo@gmail.com";
+      $toEmail = "info@shevotesil.org";
       
       $body = "";
       $body .= "Name: ".$username."\r\n";
@@ -99,10 +99,11 @@
 
     <header>
         <!-- JS takes this and injects nav -->
+
 <div class="container" id="nav">
     <nav>
         <div class="nav-brand">
-            <a href="index.html">
+            <a href="index.html" class="no-new-tab">
                 <img src="images/logo_concept4.png" alt="SVI Logo" class="logo">
             </a>
         </div>
@@ -116,39 +117,39 @@
                 <i class="icon ion-md-close"></i>
             </div>
             <div class="take-action-dropdown">
-                <li class="nav-item">
-                    <a href="who-we-are.html" class="nav-link">Who We Are</a>
+                <li class="nav-item" onclick="">
+                    <a class="nav-link">Who We Are</a>
                 </li>
                 <div class="take-action-dropdown-content">
-                    <a href="our-accomplishments.html">Our Accomplishments</a>
+                    <a  class="no-new-tab" href="who-we-are.html">Our Team</a>
+                    <a class="no-new-tab" href="our-accomplishments.html">Our Accomplishments</a>
                 </div>
 
             </div>
             <li class="nav-item">
-                <a href="your-vote-matters.html" class="nav-link">Your Vote Matters</a>
+                <a href="your-vote-matters.html" class="nav-link no-new-tab">Your Vote Matters</a>
             </li>
             <div class="take-action-dropdown">
-                <li class="nav-item">
-                    <a href="events.html" class="nav-link">Take Action</a>
+                <li class="nav-item" onclick="">
+                    <a class="nav-link no-new-tab">Take Action</a>
                 </li>
                 <div class="take-action-dropdown-content">
-                    <a href="events.html">Events</a>
-                    <a href="guides.html">Guides & Toolkits</a>
-                    <a href="current-initiatives.html">Current Initiatives</a>
-                    <a href="lets-connect.php">Volunteer With Us</a>
+                    <a class="no-new-tab" href="current-initiatives.html">Current Initiatives</a>
+                    <a class="no-new-tab" href="events.html">Events</a>
+                    <a class="no-new-tab" href="guides.html">Guides & Toolkits</a>
+                    <a class="no-new-tab" href="lets-connect.php">Volunteer With Us</a>
                 </div>
 
             </div>
             <li class="nav-item">
-                <a href="policy-corner.html" class="nav-link">Policy Corner</a>
+                <a href="policy-corner.html" class="nav-link no-new-tab">Policy Corner</a>
             </li>
             <li class="nav-item">
-                <a href="lets-connect.php" class="nav-link">Let's Connect</a>
+                <a href="lets-connect.php" class="nav-link no-new-tab">Let's Connect</a>
             </li>
         </ul>
     </nav>
 </div>
-
     </header>
 
     <main>
@@ -210,6 +211,7 @@
                 <button type="submit" class="btn">Submit</button>
 
             </div>
+            <br><br><br>
         </form>
           </section>
           </div>
@@ -232,10 +234,8 @@
 
     </main>
 
-    <br><br><br><br>
-    <br><br><br><br>
     <footer>
-        <p>&copy; 2020 She Votes Illinois | <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></p>
+        <p>&copy; 2020 She Votes Illinois | <a class="no-new-tab" href="privacy-policy.html">Privacy Policy</a> | <a class="no-new-tab" href="terms-of-use.html">Terms of Use</a></p>
     </footer>
 
     <script type="text/javascript" src="jquery-3.5.1.min.js"></script>
